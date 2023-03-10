@@ -1,1 +1,26 @@
-/*# sourceMappingURL=main.css.map */
+body {
+  background-color: #f2ebe3;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1000px) {
+  .photo-mobile {
+    display: none;
+  }
+}
+
+.photo-desktop {
+  display: none;
+}
+@media (min-width: 1000px) {
+  .photo-desktop {
+    display: block;
+  }
+}
+
+h1 {
+  color: #1c232b;
+  font-family: "Fraunces", serif;
+}/*# sourceMappingURL=main.css.map */

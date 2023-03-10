@@ -1,2 +1,46 @@
-// font-family: 'Fraunces', serif;
-// font-family: 'Montserrat', sans-serif;
+$colors: (
+    button: #3c8067,
+    bodybg: #f2ebe3,
+    darkfont: #1c232b,
+    lightfont: #6c7289,
+    cardbg: #ffffff
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+$desktop: 1000px; //change when needed
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+body {
+    background-color: color(bodybg);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.photo-mobile {
+    @include desktop {
+        display: none;
+    }
+}
+
+.photo-desktop {
+    display: none;
+
+    @include desktop {
+        display: block;
+    }
+}
+
+
+h1 {
+    color: color(darkfont);
+    font-family: 'Fraunces', serif;
+}

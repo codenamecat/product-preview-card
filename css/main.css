@@ -2,9 +2,27 @@ body {
   background-color: #f2ebe3;
   font-family: "Montserrat", sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+main {
+  background-color: #ffffff;
+  width: 95%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+@media (min-width: 1000px) {
+  main {
+    display: flex;
+    align-items: center;
+    max-width: 650px;
+  }
 }
 
+.photo-mobile {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
 @media (min-width: 1000px) {
   .photo-mobile {
     display: none;
@@ -17,10 +35,72 @@ body {
 @media (min-width: 1000px) {
   .photo-desktop {
     display: block;
+    max-height: 500px;
+    border-radius: 10px 0 0 10px;
   }
+}
+
+.info {
+  padding: 20px;
+}
+
+.pre-header {
+  color: #6c7289;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 3px;
+  margin: 0;
 }
 
 h1 {
   color: #1c232b;
   font-family: "Fraunces", serif;
+  margin: 10px 0;
+  line-height: 1em;
+}
+
+.introtext, .old-price {
+  color: #6c7289;
+  font-size: 14px;
+  line-height: 1.75em;
+}
+
+.brand {
+  text-transform: uppercase;
+}
+
+.priceinfo {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  color: #3c8067;
+  font-family: "Fraunces", serif;
+  font-size: 32px;
+  margin: 0 20px 0 0;
+}
+
+.old-price {
+  text-decoration: line-through;
+  margin: 0;
+}
+
+button {
+  width: 100%;
+  background-color: #3c8067;
+  color: #ffffff;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.cart-icon {
+  margin-right: 12px;
 }/*# sourceMappingURL=main.css.map */

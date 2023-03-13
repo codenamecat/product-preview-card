@@ -18,14 +18,40 @@ $desktop: 1000px; //change when needed
     }
 }
 
+html {
+    // height: 100%; mess with these
+}
+
 body {
     background-color: color(bodybg);
     font-family: 'Montserrat', sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    // height: 100%; mess with these
+
+    @include desktop {
+        
+    }
+}
+
+main {
+    background-color: color(cardbg);
+    width: 95%;
+    max-width: 500px;
+    border-radius: 10px;
+
+    @include desktop {
+        display: flex;
+        align-items: center;
+        max-width: 650px;
+    }
 }
 
 .photo-mobile {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+
     @include desktop {
         display: none;
     }
@@ -36,11 +62,71 @@ body {
 
     @include desktop {
         display: block;
+        max-height: 500px; //is this alright
+        border-radius: 10px 0 0 10px;
     }
 }
 
+.info {
+    padding: 20px;
+}
+
+.pre-header {
+    color: color(lightfont);
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 3px;
+    margin: 0;
+}
 
 h1 {
     color: color(darkfont);
     font-family: 'Fraunces', serif;
+    margin: 10px 0;
+    line-height: 1em;
+}
+
+.introtext, .old-price {
+    color: color(lightfont);
+    font-size: 14px;
+    line-height: 1.75em;
+}
+
+.brand {
+    text-transform: uppercase;
+}
+
+.priceinfo {
+    display: flex;
+    align-items: center;
+}
+
+.price {
+    color: color(button);
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    margin: 0 20px 0 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    margin: 0;
+}
+
+button {
+    width: 100%;
+    background-color: color(button);
+    color: color(cardbg);
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.cart-icon {
+    margin-right: 12px;
 }

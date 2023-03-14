@@ -3,14 +3,15 @@ $colors: (
     bodybg: #f2ebe3,
     darkfont: #1c232b,
     lightfont: #6c7289,
-    cardbg: #ffffff
+    cardbg: #ffffff,
+    buttonhover: #143126
 );
 
 @function color($color-name) {
     @return map-get($colors, $color-name)
 }
 
-$desktop: 1000px; //change when needed
+$desktop: 800px;
 
 @mixin desktop {
     @media (min-width: #{$desktop}) {
@@ -19,7 +20,10 @@ $desktop: 1000px; //change when needed
 }
 
 html {
-    // height: 100%; mess with these
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
@@ -28,11 +32,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // height: 100%; mess with these
-
-    @include desktop {
-        
-    }
 }
 
 main {
@@ -62,13 +61,17 @@ main {
 
     @include desktop {
         display: block;
-        max-height: 500px; //is this alright
+        max-height: 470px;
         border-radius: 10px 0 0 10px;
     }
 }
 
 .info {
     padding: 20px;
+
+    @include desktop {
+        padding: 30px;
+    }
 }
 
 .pre-header {
@@ -77,6 +80,10 @@ main {
     font-size: 0.75em;
     letter-spacing: 3px;
     margin: 0;
+
+    @include desktop {
+        margin-bottom: 2em;
+    }
 }
 
 h1 {
@@ -84,12 +91,20 @@ h1 {
     font-family: 'Fraunces', serif;
     margin: 10px 0;
     line-height: 1em;
+
+    @include desktop {
+        margin-bottom: 0.75em;
+    }
 }
 
 .introtext, .old-price {
     color: color(lightfont);
     font-size: 14px;
     line-height: 1.75em;
+
+    @include desktop {
+        margin-bottom: 2em;
+    }
 }
 
 .brand {
@@ -99,6 +114,10 @@ h1 {
 .priceinfo {
     display: flex;
     align-items: center;
+
+    @include desktop {
+        margin-bottom: 2em;
+    }
 }
 
 .price {
@@ -126,7 +145,14 @@ button {
     font-size: 14px;
     margin-top: 15px;
     margin-bottom: 5px;
+    transition-duration: 0.15s;
+
+    &:hover {
+        background-color: color(buttonhover);
+     cursor: pointer;
+    }
 }
+
 .cart-icon {
     margin-right: 12px;
 }

@@ -1,3 +1,10 @@
+html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   background-color: #f2ebe3;
   font-family: "Montserrat", sans-serif;
@@ -5,13 +12,14 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 main {
   background-color: #ffffff;
   width: 95%;
   max-width: 500px;
   border-radius: 10px;
 }
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   main {
     display: flex;
     align-items: center;
@@ -23,7 +31,7 @@ main {
   width: 100%;
   border-radius: 10px 10px 0 0;
 }
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .photo-mobile {
     display: none;
   }
@@ -32,16 +40,21 @@ main {
 .photo-desktop {
   display: none;
 }
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .photo-desktop {
     display: block;
-    max-height: 500px;
+    max-height: 470px;
     border-radius: 10px 0 0 10px;
   }
 }
 
 .info {
   padding: 20px;
+}
+@media (min-width: 800px) {
+  .info {
+    padding: 30px;
+  }
 }
 
 .pre-header {
@@ -51,6 +64,11 @@ main {
   letter-spacing: 3px;
   margin: 0;
 }
+@media (min-width: 800px) {
+  .pre-header {
+    margin-bottom: 2em;
+  }
+}
 
 h1 {
   color: #1c232b;
@@ -58,11 +76,21 @@ h1 {
   margin: 10px 0;
   line-height: 1em;
 }
+@media (min-width: 800px) {
+  h1 {
+    margin-bottom: 0.75em;
+  }
+}
 
 .introtext, .old-price {
   color: #6c7289;
   font-size: 14px;
   line-height: 1.75em;
+}
+@media (min-width: 800px) {
+  .introtext, .old-price {
+    margin-bottom: 2em;
+  }
 }
 
 .brand {
@@ -72,6 +100,11 @@ h1 {
 .priceinfo {
   display: flex;
   align-items: center;
+}
+@media (min-width: 800px) {
+  .priceinfo {
+    margin-bottom: 2em;
+  }
 }
 
 .price {
@@ -99,6 +132,11 @@ button {
   font-size: 14px;
   margin-top: 15px;
   margin-bottom: 5px;
+  transition-duration: 0.15s;
+}
+button:hover {
+  background-color: #143126;
+  cursor: pointer;
 }
 
 .cart-icon {
